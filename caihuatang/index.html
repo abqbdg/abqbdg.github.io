@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩画堂-传统彩画艺术传承与在线鉴赏</title>
+    <meta name="description" content="彩画堂致力于传统彩画艺术的展示与推广，提供古典建筑彩画、民间彩绘及现代彩画作品的在线鉴赏、技艺解析与定制服务。">
+    <meta name="keywords" content="彩画堂, 彩画艺术, 古建筑彩画, 传统彩绘, 油画, 工艺美术">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown */
+            --secondary-color: #D2691E; /* Chocolate */
+            --bg-color: #F9F7F2; /* Off-white paper color */
+            --text-color: #333333;
+            --light-text: #666666;
+            --accent-gold: #C5A059;
+            --border-color: #E0D8C8;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/painting_art/1920/1080.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #b08d4b;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 13px 38px;
+            border-radius: 30px;
+            font-size: 18px;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* Intro Section */
+        .intro {
+            background-color: #fff;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .intro-image {
+            position: relative;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 20px 20px 0 var(--border-color);
+        }
+
+        /* Categories Section */
+        .categories {
+            background-color: var(--bg-color);
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--light-text);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .cat-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .cat-img img {
+            transform: scale(1.05);
+        }
+
+        .cat-content {
+            padding: 25px;
+        }
+
+        .cat-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .cat-content p {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+
+        .cat-link {
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 69, 19, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Features/Process Section */
+        .process {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .process h2 {
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .process-item {
+            position: relative;
+        }
+
+        .process-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .process-item h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .process-item p {
+            font-size: 14px;
+            opacity: 0.8;
+            padding: 0 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--light-text);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero-btns {
+                flex-direction: column;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span>彩画堂</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#gallery">作品鉴赏</a></li>
+                    <li><a href="#categories">技艺分类</a></li>
+                    <li><a href="#process">定制流程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">联系咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>传承千年色彩，绘就时光之美</h1>
+                <p>彩画堂专注于传统彩画艺术与现代审美的融合，为您提供从古典建筑修复到现代艺术创作的专业服务与鉴赏平台。</p>
+                <div class="hero-btns">
+                    <a href="#gallery" class="btn-primary">浏览作品</a>
+                    <a href="#process" class="btn-outline">了解定制</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="section-padding intro">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>关于彩画堂</h2>
+                        <p>彩画堂成立于2010年，是一家集传统彩画技艺研究、创作、修复与推广为一体的专业机构。我们致力于挖掘中国传统彩画艺术的精髓，如苏式彩画、和玺彩画等，并将其应用于现代建筑装饰与家居装饰中。</p>
+                        <p>无论您是寻找古建筑修复的专业方案，还是希望为家中增添一份古典韵味，彩画堂都能为您提供量身定制的色彩方案与艺术创作。</p>
+                        <a href="#categories" style="color: var(--secondary-color); font-weight: bold; margin-top: 10px; display: inline-block;">探索我们的服务 &rarr;</a>
+                    </div>
+                    <div class="intro-image">
+                        <img src="https://picsum.photos/seed/paint_work/600/400.jpg" alt="彩画师工作场景">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section-padding categories">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>技艺分类</h2>
+                    <p>涵盖从皇家宫殿到民间宅院的各类彩画风格</p>
+                </div>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/palace_art/400/300.jpg" alt="和玺彩画">
+                        </div>
+                        <div class="cat-content">
+                            <h3>和玺彩画</h3>
+                            <p>等级最高，主要应用于宫殿、坛庙等主要建筑，以龙凤图案为主，色彩浓烈，庄严肃穆。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/garden_art/400/300.jpg" alt="苏式彩画">
+                        </div>
+                        <div class="cat-content">
+                            <h3>苏式彩画</h3>
+                            <p>源于苏州，色彩丰富，构图灵活，常绘有山水人物、花鸟虫鱼等，多用于园林建筑。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/folk_art/400/300.jpg" alt="旋子彩画">
+                        </div>
+                        <div class="cat-content">
+                            <h3>旋子彩画</h3>
+                            <p>等级仅次于和玺，以卷旋的花瓣（旋子）图案为主，色彩相对素雅，应用广泛。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/modern_art/400/300.jpg" alt="现代彩绘">
+                        </div>
+                        <div class="cat-content">
+                            <h3>现代彩绘</h3>
+                            <p>将传统技艺与现代设计理念结合，适用于室内墙面、商业空间及创意艺术装置。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section-padding gallery">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>作品鉴赏</h2>
+                    <p>精选历代彩画精品与近期创作案例</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art1/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>古建修复案例</h4>
+                            <p>某地古戏台彩画复原工程</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art2/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>苏式彩画</h4>
+                            <p>江南园林亭台彩画细节</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art3/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>壁画创作</h4>
+                            <p>宗教题材大型壁画绘制</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art4/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>室内彩绘</h4>
+                            <p>新中式风格家居背景墙</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art5/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>非遗传承</h4>
+                            <p>传统矿物颜料调配工艺</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art6/400/500.jpg" alt="彩画作品展示">
+                        <div class="gallery-overlay">
+                            <h4>人物彩画</h4>
+                            <p>工笔重彩人物肖像</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section-padding process">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>定制流程</h2>
+                    <p>严谨的工艺流程，确保每一笔色彩都经得起时间的考验</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-item">
+                        <div class="process-icon">1</div>
+                        <h3>现场勘察与沟通</h3>
+                        <p>专业设计师上门勘察环境，与客户深入沟通设计理念与风格偏好。</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">2</div>
+                        <h3>方案设计与定稿</h3>
+                        <p>提供初步草图与效果图，根据反馈调整细节，确定最终方案。</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">3</div>
+                        <h3>材料准备与打底</h3>
+                        <p>选用优质天然颜料与基底材料，进行基层处理与底色绘制。</p>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">4</div>
+                        <h3>精细描绘与收尾</h3>
+                        <p>进行精细的线条勾勒与色彩晕染，最后进行整体修整与保护处理。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding faq">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            传统彩画与现代喷绘有什么区别？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>传统彩画使用天然矿物颜料和植物胶料，色彩持久且具有独特的光泽感，且每一笔都由人工绘制，具有唯一性。而现代喷绘多使用化学颜料，色彩鲜艳但时间久了容易褪色，且缺乏手工的温度。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            定制一幅彩画需要多长时间？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>时间取决于作品的大小和复杂程度。小型室内装饰彩画通常需要1-2周，而大型古建筑修复或复杂壁画可能需要数月甚至更长时间。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            彩画需要定期维护吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>是的。传统彩画虽然色彩持久，但长期暴露在自然环境中可能会积灰或受潮。建议每年进行一次简单的除尘和检查，每3-5年进行一次专业的补色和加固处理。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding" style="background-color: #fff;">
+            <div class="container text-center">
+                <h2 style="font-size: 32px; color: var(--primary-color); margin-bottom: 20px;">开启您的色彩之旅</h2>
+                <p style="color: var(--light-text); margin-bottom: 40px;">无论是古建修复咨询还是新空间彩绘定制，欢迎随时联系我们。</p>
+                <button class="cta-button" style="font-size: 18px; padding: 15px 40px;" onclick="alert('感谢您的兴趣！请通过电话或邮件与我们取得联系。')">立即咨询</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>彩画堂</h3>
+                    <p style="opacity: 0.7;">传承非遗技艺，弘扬传统美学。我们用色彩讲述历史，用画笔描绘未来。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#gallery">作品展示</a></li>
+                        <li><a href="#categories">服务项目</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">古建筑彩画</a></li>
+                        <li><a href="#">寺庙壁画</a></li>
+                        <li><a href="#">室内彩绘</a></li>
+                        <li><a href="#">彩画修复</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：010-12345678</li>
+                        <li>邮箱：contact@caihuatan.com</li>
+                        <li>地址：北京市朝阳区艺术园区88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 彩画堂 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                
+                // Toggle active class
+                parent.classList.toggle('active');
+                
+                // Optional: Close others
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
