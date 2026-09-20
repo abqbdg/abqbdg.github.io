@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微商城代理-微商代理加盟与系统搭建指南</title>
+    <meta name="description" content="微商城代理官方指南，提供微商代理加盟流程、微信商城系统搭建教程、代理拿货政策及代理运营策略，帮助新手快速入门成为微商城代理。">
+    <meta name="keywords" content="微商城代理,微商代理,微信商城系统,微商加盟,代理拿货">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #07c160; /* 微信绿 */
+            --primary-dark: #06ad56;
+            --secondary-color: #f8f9fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --border-color: #eeeeee;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* 特性/优势区域 */
+        .features {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            background: var(--secondary-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* 代理流程 */
+        .process {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 0 0 6px #fff;
+        }
+
+        .step-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* 系统功能 */
+        .system-features {
+            padding: 80px 0;
+        }
+
+        .system-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .system-image {
+            flex: 1;
+            background: #f0f0f0;
+            border-radius: var(--radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23f5f5f5"/><circle cx="50" cy="50" r="40" stroke="%23ddd" stroke-width="2" fill="none"/><path d="M50 10 L50 90 M10 50 L90 50" stroke="%23ddd" stroke-width="1"/></svg>');
+            background-size: 40px;
+        }
+
+        .system-content {
+            flex: 1;
+        }
+
+        .system-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .system-content ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* CTA Banner */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .system-layout {
+                flex-direction: column;
+            }
+
+            .system-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                代理云
+            </div>
+            <nav class="nav-links">
+                <a href="#advantages">代理优势</a>
+                <a href="#process">加盟流程</a>
+                <a href="#features">系统功能</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#join" class="btn-cta">立即咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>微商城代理 <span>轻松开启</span> 品牌创业之路</h1>
+                <p>无需囤货，一键分销。我们提供成熟的微商城代理系统，帮助您快速搭建个人品牌，对接优质供应链，享受零风险代理收益。</p>
+                <a href="#join" class="btn-cta" style="font-size: 18px; padding: 12px 30px;">免费获取代理方案</a>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10W+</h3>
+                        <p>注册代理</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>合作品牌</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>好评率</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代理优势 -->
+        <section id="advantages" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择成为微商城代理？</h2>
+                    <p>打破传统电商壁垒，为您打造全方位的创业支持</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>一件代发，无需囤货</h3>
+                        <p>平台整合供应链资源，您无需提前购买库存，客户下单后由总部统一发货，极大降低创业资金风险。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>系统搭建，零代码</h3>
+                        <p>提供SaaS微商城系统，后台功能完善，支持装修、营销活动设置，无需懂技术也能轻松运营。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>高额返佣，利润透明</h3>
+                        <p>设置灵活的分销层级和佣金比例，每一笔交易都有记录，后台实时查看收益，收益看得见。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>运营培训，扶持成长</h3>
+                        <p>提供专业的微商运营培训课程，包含文案撰写、社群营销技巧，助您快速上手，成为行业专家。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>全渠道引流</h3>
+                        <p>支持微信、微博、抖音等多平台一键分享，自动生成精美推广海报，助力私域流量变现。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>正品保障，售后无忧</h3>
+                        <p>所有商品均由品牌方直供或正规渠道采购，假一赔十，平台提供完善的售后服务支持。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加盟流程 -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>微商城代理加盟流程</h2>
+                    <p>简单四步，开启您的代理事业</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>提交申请</h3>
+                        <p>填写代理申请表，选择代理类型与意向品牌</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>资质审核</h3>
+                        <p>客服团队1对1审核，确认合作意向与资料</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>系统开通</h3>
+                        <p>开通专属微商城账号，获取后台权限与培训资料</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>正式运营</h3>
+                        <p>发布商品，开始推广，享受专属佣金与扶持</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 系统功能 -->
+        <section id="features" class="system-features">
+            <div class="container">
+                <div class="system-layout">
+                    <div class="system-image">
+                        <!-- 占位图示意 -->
+                        <div style="text-align:center;">
+                            <h3>微商城后台演示</h3>
+                            <p>功能强大，操作简便</p>
+                        </div>
+                    </div>
+                    <div class="system-content">
+                        <h3>强大的微商城代理系统功能</h3>
+                        <p>我们为企业提供一站式微商城解决方案，让代理运营更加高效。</p>
+                        <br>
+                        <ul>
+                            <li><span class="check-icon">✔</span> <strong>多级分销：</strong> 支持设置一级、二级甚至多级分销商，自动计算佣金。</li>
+                            <li><span class="check-icon">✔</span> <strong>智能推广：</strong> 生成专属推广链接与二维码，扫码下单自动识别代理身份。</li>
+                            <li><span class="check-icon">✔</span> <strong>营销工具：</strong> 包含拼团、秒杀、优惠券、砍价等营销玩法。</li>
+                            <li><span class="check-icon">✔</span> <strong>数据分析：</strong> 实时查看销售数据、代理层级分布及佣金提现记录。</li>
+                            <li><span class="check-icon">✔</span> <strong>会员管理：</strong> 自动记录会员购买行为，支持会员等级与积分体系。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于微商城代理的疑问与解答</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">成为微商城代理需要缴纳费用吗？</div>
+                        <div class="faq-answer">根据不同的品牌政策和代理级别，有些品牌可能需要缴纳少量的代理保证金或平台服务费，也有部分品牌支持免费申请。具体请咨询在线客服。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">没有经验可以做微商城代理吗？</div>
+                        <div class="faq-answer">完全可以。我们提供完善的培训体系和运营指导，从开店到引流都有专人协助，即使是从零开始的新手也能快速上手。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">佣金多久结算一次？</div>
+                        <div class="faq-answer">佣金结算周期通常为T+7或T+15，具体结算方式在代理协议中注明。支持微信提现，到账速度快。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果遇到售后问题怎么办？</div>
+                        <div class="faq-answer">所有售后问题由品牌方或平台统一处理，代理无需直接面对客户退换货，只需负责推广，省心省力。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join" class="cta-section">
+            <div class="container">
+                <h2>准备好加入微商城代理行列了吗？</h2>
+                <p>立即联系我们，获取您的专属代理方案与系统演示账号</p>
+                <a href="#" class="btn-white">联系客服咨询</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">专注为小微创业者提供SaaS微商城系统与代理服务，致力于降低创业门槛，助力个人品牌成长。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#advantages">代理优势</a></li>
+                        <li><a href="#process">加盟流程</a></li>
+                        <li><a href="#features">系统功能</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@agent-cloud.com</li>
+                        <li>工作时间：周一至周日 9:00-21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 代理云科技 版权所有 | 微商城代理系统提供商</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                                                  </html>
