@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pvp游戏-硬核竞技对战平台与攻略指南</title>
+    <meta name="description" content="本站提供pvp游戏深度解析，涵盖热门竞技游戏推荐、操作技巧教学、版本强势英雄/角色分析及公平对战环境指南。">
+    <meta name="keywords" content="pvp游戏,竞技游戏,MOBA,射击游戏,对战攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --secondary-color: #ec4899;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-green: #10b981;
+            --border-color: #334155;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 8px 12px;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: radial-gradient(circle at top center, #1e1b4b 0%, var(--bg-dark) 60%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .section-more {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .game-thumb {
+            height: 180px;
+            background: #334155;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .game-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .game-card:hover .game-thumb img {
+            transform: scale(1.05);
+        }
+
+        .game-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Strategy Section */
+        .strategy-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .article-item:hover {
+            background: #263345;
+        }
+
+        .article-thumb {
+            width: 200px;
+            height: 120px;
+            border-radius: 8px;
+            background: #334155;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .article-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            flex: 1;
+        }
+
+        .article-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 15px;
+        }
+
+        .tag {
+            color: var(--secondary-color);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #334155;
+            color: var(--text-muted);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 12px;
+            font-weight: 700;
+        }
+
+        .rank-num.top-1 {
+            background: #fbbf24;
+            color: #000;
+        }
+
+        .rank-num.top-2 {
+            background: #94a3b8;
+            color: #000;
+        }
+
+        .rank-num.top-3 {
+            background: #b45309;
+            color: #fff;
+        }
+
+        .rank-name {
+            font-weight: 500;
+        }
+
+        /* Environment Section */
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .env-card {
+            background: linear-gradient(145deg, var(--bg-card), #253045);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .env-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+        }
+
+        .env-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .env-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1120;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .strategy-layout {
+                grid-template-columns: 1fr;
+            }
+            .article-item {
+                flex-direction: column;
+            }
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+            .env-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .search-box {
+                display: none;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">PVP竞技空间</a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">热门游戏</a>
+                <a href="#">实战攻略</a>
+                <a href="#">英雄/角色</a>
+                <a href="#">赛事资讯</a>
+                <a href="#">社区交流</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索 pvp游戏...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>探索 pvp游戏 的极致乐趣</h1>
+                <p>汇集全球热门竞技对战游戏，提供深度英雄解析、实战连招技巧与公平竞技环境指南。无论你是新手还是老将，这里都有你的竞技舞台。</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">开始对战</a>
+                    <a href="#" class="btn btn-outline">浏览攻略</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Categories -->
+        <section class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>热门 pvp游戏 分类</h2>
+                    <p>选择你擅长的战场，开启实时对抗</p>
+                </div>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="game-grid">
+                <article class="game-card">
+                    <div class="game-thumb">
+                        <span class="game-tag">MOBA</span>
+                        <img src="https://picsum.photos/seed/moba/400/250" alt="MOBA竞技游戏">
+                    </div>
+                    <div class="game-info">
+                        <h3>3D多人在线战术竞技</h3>
+                        <div class="game-meta">
+                            <span>人数：5v5</span>
+                            <span>平台：PC/手游</span>
+                        </div>
+                        <p class="game-desc">经典的5v5英雄对战模式，考验团队配合与个人操作，策略与反应并重。</p>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">9.2</span>
+                                <span class="stat-label">热度</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">300w+</span>
+                                <span class="stat-label">日活</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">S12</span>
+                                <span class="stat-label">赛季</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="game-thumb">
+                        <span class="game-tag">FPS</span>
+                        <img src="https://picsum.photos/seed/fps/400/250" alt="第一人称射击游戏">
+                    </div>
+                    <div class="game-info">
+                        <h3>战术射击与团队竞技</h3>
+                        <div class="game-meta">
+                            <span>模式：爆破/团队</span>
+                            <span>平台：全平台</span>
+                        </div>
+                        <p class="game-desc">高精度的射击手感，强调掩体利用与枪法博弈，体验紧张刺激的枪战。</p>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">9.0</span>
+                                <span class="stat-label">热度</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">500w+</span>
+                                <span class="stat-label">日活</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">T3</span>
+                                <span class="stat-label">排名</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="game-thumb">
+                        <span class="game-tag">格斗</span>
+                        <img src="https://picsum.photos/seed/fight/400/250" alt="格斗竞技游戏">
+                    </div>
+                    <div class="game-info">
+                        <h3>近身格斗与连招对决</h3>
+                        <div class="game-meta">
+                            <span>机制：3D/2D</span>
+                            <span>平台：主机/PC</span>
+                        </div>
+                        <p class="game-desc">考验微操与心理博弈，通过华丽的连招与格挡反击击败对手。</p>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">8.8</span>
+                                <span class="stat-label">热度</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">80w+</span>
+                                <span class="stat-label">日活</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">T1</span>
+                                <span class="stat-label">排名</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="game-card">
+                    <div class="game-thumb">
+                        <span class="game-tag">策略</span>
+                        <img src="https://picsum.photos/seed/strat/400/250" alt="RTS实时战略">
+                    </div>
+                    <div class="game-info">
+                        <h3>实时战略与资源博弈</h3>
+                        <div class="game-meta">
+                            <span>规模：大规模</span>
+                            <span>平台：PC</span>
+                        </div>
+                        <p class="game-desc">建设基地、发展科技、指挥军队，在宏大的战场上运筹帷幄。</p>
+                        <div class="game-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">8.5</span>
+                                <span class="stat-label">热度</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">40w+</span>
+                                <span class="stat-label">日活</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">T2</span>
+                                <span class="stat-label">排名</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Strategy & Guides -->
+        <section style="background-color: #131c31;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>深度实战攻略</h2>
+                        <p>从入门到精通，掌握 pvp 游戏制胜关键</p>
+                    </div>
+                    <a href="#" class="section-more">更多攻略 &rarr;</a>
+                </div>
+                <div class="strategy-layout">
+                    <div class="article-list">
+                        <article class="article-item">
+                            <div class="article-thumb">
+                                <img src="https://picsum.photos/seed/strategy1/300/180" alt="PVP技巧">
+                            </div>
+                            <div class="article-content">
+                                <span class="tag">MOBA攻略</span>
+                                <h3>新赛季最强上分英雄推荐与出装思路</h3>
+                                <p>随着版本更新，部分英雄机制得到加强。本文详细分析当前版本T0级别英雄的技能连招与出装顺序，助你快速上分。</p>
+                                <div class="article-meta">
+                                    <span>作者：战术大师</span>
+                                    <span>阅读：2.3w</span>
+                                    <span>更新：3天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-item">
+                            <div class="article-thumb">
+                                <img src="https://picsum.photos/seed/strategy2/300/180" alt="FPS技巧">
+                            </div>
+                            <div class="article-content">
+                                <span class="tag">FPS技巧</span>
+                                <h3>压枪技巧详解：如何稳定击杀移动靶</h3>
+                                <p>想要在 pvp 射击游戏中稳定输出，压枪是必修课。本文通过理论分析与实战演示，教你如何调整鼠标灵敏度与后坐力控制。</p>
+                                <div class="article-meta">
+                                    <span>作者：神枪手</span>
+                                    <span>阅读：1.8w</span>
+                                    <span>更新：5天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-item">
+                            <div class="article-thumb">
+                                <img src="https://picsum.photos/seed/strategy3/300/180" alt="心态建设">
+                            </div>
+                            <div class="article-content">
+                                <span class="tag">心态建设</span>
+                                <h3>PVP竞技中的心理博弈：如何应对连败</h3>
+                                <p>竞技游戏不仅是技术的比拼，更是心理的较量。面对连败，如何调整心态，避免情绪化操作，是高手进阶的必经之路。</p>
+                                <div class="article-meta">
+                                    <span>作者：心理顾问</span>
+                                    <span>阅读：5.1w</span>
+                                    <span>更新：1周前</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside>
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">热门英雄排行</h4>
+                            <ul class="rank-list">
+                                <li>
+                                    <span class="rank-num top-1">1</span>
+                                    <span class="rank-name">影舞者</span>
+                                </li>
+                                <li>
+                                    <span class="rank-num top-2">2</span>
+                                    <span class="rank-name">重装卫士</span>
+                                </li>
+                                <li>
+                                    <span class="rank-num top-3">3</span>
+                                    <span class="rank-name">元素法师</span>
+                                </li>
+                                <li>
+                                    <span class="rank-num">4</span>
+                                    <span class="rank-name">神射手</span>
+                                </li>
+                                <li>
+                                    <span class="rank-num">5</span>
+                                    <span class="rank-name">暗影刺客</span>
+                                </li>
+                                <li>
+                                    <span class="rank-num">6</span>
+                                    <span class="rank-name">圣光牧师</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">竞技环境分析</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
+                                当前赛季的平衡性调整主要集中在防御装备削弱，进攻方胜率略有提升。建议关注新版本中刺客类角色的加强。
+                            </p>
+                            <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">查看完整报告 &rarr;</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environment & Fairness -->
+        <section class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>构建公平竞技环境</h2>
+                    <p>关于 pvp 游戏反作弊与匹配机制的说明</p>
+                </div>
+            </div>
+            <div class="env-grid">
+                <div class="env-card">
+                    <div class="env-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>实名认证系统</h4>
+                    <p>强制执行实名注册，防止未成年人沉迷，营造健康的对战氛围。</p>
+                </div>
+                <div class="env-card">
+                    <div class="env-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>智能反外挂</h4>
+                    <p>采用行为分析与机器学习技术，实时监测异常数据，确保公平对战。</p>
+                </div>
+                <div class="env-card">
+                    <div class="env-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>ELO匹配机制</h4>
+                    <p>根据玩家历史战绩动态调整匹配等级，保证对局势均力敌。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">PVP竞技空间</a>
+                    <p>致力于为玩家提供最全面的 pvp 游戏资讯、攻略与社区支持。让我们一起享受竞技的乐趣。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">游戏库</a></li>
+                        <li><a href="#">新手指南</a></li>
+                        <li><a href="#">职业选手</a></li>
+                        <li><a href="#">赛事日历</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源下载</h4>
+                    <ul>
+                        <li><a href="#">官方客户端</a></li>
+                        <li><a href="#">高清壁纸</a></li>
+                        <li><a href="#">英雄皮肤</a></li>
+                        <li><a href="#">工具插件</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">加入社区</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PVP竞技空间. All Rights Reserved. 本站内容仅供学习交流，不用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
