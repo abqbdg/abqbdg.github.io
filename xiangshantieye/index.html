@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向山铁也-日本著名漫画家、插画师官方网站</title>
+    <meta name="description" content="向山铁也官方网站。提供向山铁也的生平简介、代表作品介绍、绘画风格分析、专访访谈及艺术作品展示。深入了解这位擅长描绘细腻情感与独特构图的新锐漫画家。">
+    <meta name="keywords" content="向山铁也, 漫画家, 插画师, 漫画介绍, 艺术作品">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(230, 126, 34, 0.6)), url('https://picsum.photos/seed/artistic/1600/900.jpg') no-repeat center center/cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 70%;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Bio Section */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .artist-avatar {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .bio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .bio-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .bio-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Works Gallery */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .work-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .work-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: #f0f2f5;
+            color: var(--text-secondary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Style Analysis */
+        .style-container {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .style-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .style-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .style-text p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .style-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .style-visual::after {
+            content: 'ARTISTIC STYLE';
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .bio-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .bio-stats {
+                justify-content: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Tetsuya<span>Yokoyama</span></a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">艺术家简介</a></li>
+                    <li><a href="#works">代表作品</a></li>
+                    <li><a href="#style">风格分析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>向山铁也</h1>
+            <p>探索日本新锐漫画家的视觉世界。细腻的笔触、独特的构图与深刻的故事叙述。</p>
+            <div>
+                <a href="#works" class="btn btn-primary">浏览作品</a>
+                <a href="#about" class="btn btn-outline">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header">
+                <h2 class="section-title">艺术家简介</h2>
+                <a href="#" class="section-more">查看完整履历 →</a>
+            </div>
+            <div class="bio-grid">
+                <img src="https://picsum.photos/seed/tetsuya/400/400.jpg" alt="向山铁也肖像" class="artist-avatar">
+                <div class="bio-content">
+                    <h3>关于向山铁也</h3>
+                    <p>向山铁也是日本当代备受瞩目的漫画家与插画师。他以其独树一帜的视觉语言和极具张力的叙事风格，在漫画界占据了一席之地。擅长运用高对比度的线条与丰富的色彩层次，描绘出充满现实感却又略带超现实的都市故事。</p>
+                    <p>他的作品不仅仅局限于传统的漫画分镜，更融合了平面设计的排版美学，为读者带来全新的阅读体验。从早期的独立连载到近年来的商业杂志连载，向山铁也始终坚持自我表达，关注人物内心的微妙变化与外部环境的冲突。</p>
+                    <div class="bio-stats">
+                        <div class="stat-item">
+                            <strong>2012</strong>
+                            <span>出道年份</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>15+</strong>
+                            <span>代表作品</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>多样</strong>
+                            <span>创作领域</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works">
+            <div class="section-header">
+                <h2 class="section-title">代表作品</h2>
+                <a href="#" class="section-more">查看全部作品 →</a>
+            </div>
+            <div class="works-grid">
+                <!-- Work 1 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/manga1/400/300.jpg" alt="作品封面" class="work-img">
+                    <div class="work-info">
+                        <h4>《都市回响》</h4>
+                        <p>一部探讨现代都市人孤独感的黑色幽默漫画，获得了当年的最佳新人奖。</p>
+                        <span class="work-tag">连载中</span>
+                        <span class="work-tag">剧情</span>
+                    </div>
+                </article>
+
+                <!-- Work 2 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/manga2/400/300.jpg" alt="作品封面" class="work-img">
+                    <div class="work-info">
+                        <h4>《黄昏列车》</h4>
+                        <p>短篇集，通过一列永不靠站的列车，串联起不同人的命运与遗憾。</p>
+                        <span class="work-tag">短篇集</span>
+                        <span class="work-tag">治愈</span>
+                    </div>
+                </article>
+
+                <!-- Work 3 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/manga3/400/300.jpg" alt="作品封面" class="work-img">
+                    <div class="work-info">
+                        <h4>《机械之心》</h4>
+                        <p>科幻题材作品，构建了一个充满机械美感的未来世界。</p>
+                        <span class="work-tag">科幻</span>
+                        <span class="work-tag">动作</span>
+                    </div>
+                </article>
+
+                <!-- Work 4 -->
+                <article class="work-card">
+                    <img src="https://picsum.photos/seed/manga4/400/300.jpg" alt="作品封面" class="work-img">
+                    <div class="work-info">
+                        <h4>《无声的呐喊》</h4>
+                        <p>深刻的心理现实主义作品，细腻刻画了主角在压抑环境下的挣扎。</p>
+                        <span class="work-tag">剧情</span>
+                        <span class="work-tag">悬疑</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Style Section -->
+        <section id="style">
+            <div class="section-header">
+                <h2 class="section-title">艺术风格</h2>
+            </div>
+            <div class="style-container">
+                <div class="style-text">
+                    <h3>视觉语言解析</h3>
+                    <p><strong>构图：</strong>向山铁也擅长打破常规的网格布局，经常使用非对称构图来制造视觉张力。他善于利用留白来引导读者的视线流动。</p>
+                    <p><strong>线条：</strong>他的线条流畅而富有变化，既有粗犷的阴影处理，也有细腻的人物面部刻画，这种反差为作品增添了独特的质感。</p>
+                    <p><strong>色彩：</strong>偏爱高饱和度的冷色调，营造出一种既疏离又引人入胜的氛围。色彩不仅仅是装饰，更是情感表达的载体。</p>
+                </div>
+                <div class="style-visual">
+                    <!-- Visual placeholder representing style analysis -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        向山铁也的代表作品有哪些？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        向山铁也的代表作品包括《都市回响》、《黄昏列车》短篇集以及科幻作品《机械之心》。这些作品展现了他从现实题材到科幻题材的广泛涉猎和驾驭能力。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        他的作品在哪里可以阅读？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        部分作品通过日本主流漫画杂志连载，部分独立短篇可在官方网站及合作的数字漫画平台发布。建议关注其官方社交媒体获取最新动态。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        向山铁也的创作灵感来源于哪里？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        他的创作灵感多来源于都市生活中的细微观察、历史文化的碎片记忆以及对人类心理的探索。他常常在日常生活中寻找那些被忽略的细节，并将其转化为画面的元素。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Tetsuya Yokoyama Official</div>
+            <div class="footer-links">
+                <a href="#">官方网站</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">联系版权方</a>
+            </div>
+            <p class="copyright">© 2023 Tetsuya Yokoyama Official Site. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            const parent = element.parentElement;
+            parent.classList.toggle('active');
+        }
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('main-nav').classList.remove('active');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
